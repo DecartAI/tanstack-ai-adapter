@@ -27,7 +27,6 @@ import { decartImage } from "@decartai/tanstack-ai";
 const result = await generateImage({
   adapter: decartImage("lucy-pro-t2i"),
   prompt: "A serene mountain landscape at sunset, cinematic lighting",
-  size: "1280x720",
 });
 
 console.log(result.images[0].b64Json); // Base64 image data
