@@ -1,5 +1,5 @@
 {
-  "name": "@decartai/tanstack-ai",
+  "name": "@decartai/tanstack-ai-adapter",
   "version": "0.0.1",
   "type": "module",
   "description": "Decart adapter for TanStack AI - image and video generation",

@@ -42,7 +42,7 @@ importers:
 
   examples/web:
     dependencies:
-      '@decartai/tanstack-ai':
+      '@decartai/tanstack-ai-adapter':
         specifier: workspace:*
         version: link:../..
       '@tanstack/ai':

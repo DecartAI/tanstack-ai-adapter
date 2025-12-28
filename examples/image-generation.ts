@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { decartImage } from "@decartai/tanstack-ai";
+import { decartImage } from "@decartai/tanstack-ai-adapter";
 import { generateImage } from "@tanstack/ai";
 
 console.log("Generating image...");

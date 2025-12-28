@@ -1,11 +1,11 @@
-# @decartai/tanstack-ai
+# @decartai/tanstack-ai-adapter
 
 Decart adapter for [TanStack AI](https://tanstack.com/ai) - image and video generation.
 
 ## Installation
 
 ```bash
-npm install @decartai/tanstack-ai @tanstack/ai
+npm install @decartai/tanstack-ai-adapter @tanstack/ai
 ```
 
 ## Setup
@@ -22,7 +22,7 @@ Or pass it directly when creating adapters.
 
 ```typescript
 import { generateImage } from "@tanstack/ai";
-import { decartImage } from "@decartai/tanstack-ai";
+import { decartImage } from "@decartai/tanstack-ai-adapter";
 
 const result = await generateImage({
   adapter: decartImage("lucy-pro-t2i"),
@@ -35,7 +35,7 @@ console.log(result.images[0].b64Json); // Base64 image data
 ### With Explicit API Key
 
 ```typescript
-import { createDecartImage } from "@decartai/tanstack-ai";
+import { createDecartImage } from "@decartai/tanstack-ai-adapter";
 
 const adapter = createDecartImage("lucy-pro-t2i", "your-api-key");
 ```
@@ -47,7 +47,7 @@ Video generation uses an async job/polling pattern.
 ```typescript
 import { setTimeout } from "node:timers/promises";
 import { generateVideo, getVideoJobStatus } from "@tanstack/ai";
-import { decartVideo } from "@decartai/tanstack-ai";
+import { decartVideo } from "@decartai/tanstack-ai-adapter";
 
 const { jobId } = await generateVideo({
   adapter: decartVideo("lucy-pro-t2v"),
@@ -95,7 +95,7 @@ console.log("Video ready:", videoUrl);
 Full TypeScript support with model-specific type safety:
 
 ```typescript
-import type { DecartImageModel, DecartVideoModel } from "@decartai/tanstack-ai";
+import type { DecartImageModel, DecartVideoModel } from "@decartai/tanstack-ai-adapter";
 ```
 
 ## License
