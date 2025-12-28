@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { createDecartImage } from "@decartai/tanstack-ai-adapter";
 import { generateImage } from "@tanstack/ai";
-import { createDecartImage } from "@decartai/tanstack-ai";
-import { TanStackDevtools } from "@tanstack/react-devtools";
 import { aiDevtoolsPlugin } from "@tanstack/react-ai-devtools";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import { useState } from "react";
 
 function App() {
-  const [apiKey, setApiKey] = useState(localStorage.getItem("DECART_API_KEY") || "");
+  const [apiKey, setApiKey] = useState(
+    localStorage.getItem("DECART_API_KEY") || ""
+  );
   const [prompt, setPrompt] = useState("A beautiful sunset over the ocean");
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -44,11 +46,24 @@ function App() {
   };
 
   return (
-    <div style={{ fontFamily: "system-ui", padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
+    <div
+      style={{
+        fontFamily: "system-ui",
+        padding: "2rem",
+        maxWidth: "800px",
+        margin: "0 auto",
+      }}
+    >
       <h1>Decart TanStack AI Demo</h1>
 
       <div style={{ marginBottom: "1rem" }}>
-        <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
+        <label
+          style={{
+            display: "block",
+            marginBottom: "0.5rem",
+            fontWeight: "bold",
+          }}
+        >
           Decart API Key
         </label>
         <input
@@ -61,7 +76,13 @@ function App() {
       </div>
 
       <div style={{ marginBottom: "1rem" }}>
-        <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "bold" }}>
+        <label
+          style={{
+            display: "block",
+            marginBottom: "0.5rem",
+            fontWeight: "bold",
+          }}
+        >
           Prompt
         </label>
         <textarea
@@ -89,7 +110,15 @@ function App() {
       </button>
 
       {error && (
-        <div style={{ marginTop: "1rem", padding: "1rem", backgroundColor: "#fee", color: "#c00", borderRadius: "4px" }}>
+        <div
+          style={{
+            marginTop: "1rem",
+            padding: "1rem",
+            backgroundColor: "#fee",
+            color: "#c00",
+            borderRadius: "4px",
+          }}
+        >
           {error}
         </div>
       )}
@@ -97,7 +126,11 @@ function App() {
       {imageUrl && (
         <div style={{ marginTop: "2rem" }}>
           <h2>Generated Image</h2>
-          <img src={imageUrl} alt="Generated" style={{ maxWidth: "100%", borderRadius: "8px" }} />
+          <img
+            src={imageUrl}
+            alt="Generated"
+            style={{ maxWidth: "100%", borderRadius: "8px" }}
+          />
         </div>
       )}
 

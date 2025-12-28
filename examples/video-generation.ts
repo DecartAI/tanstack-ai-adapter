@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { setTimeout } from "node:timers/promises";
-import { decartVideo } from "@decartai/tanstack-ai";
+import { decartVideo } from "@decartai/tanstack-ai-adapter";
 import { generateVideo, getVideoJobStatus } from "@tanstack/ai";
 
 const { jobId } = await generateVideo({
